@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.vagner.Picpay.controllers.dto.CreateWalletDto;
 import com.vagner.Picpay.entities.Wallet;
 import com.vagner.Picpay.services.WalletService;
 
@@ -18,9 +19,11 @@ public class WalletController {
 	} 
 	
 	@PostMapping ("/wallets")
-	public ResponseEntity<Wallet> createWallet(@RequestBody Wallet wallet){
-		var newWallet = walletService.createWallet(wallet);
-		return ResponseEntity.ok(newWallet);
+	public ResponseEntity<Wallet> createWallet(@RequestBody CreateWalletDto dto){
+		
+		var wallet = walletService.createWallet(dto);
+		
+		return ResponseEntity.ok(wallet);
 	}
 	
 }
