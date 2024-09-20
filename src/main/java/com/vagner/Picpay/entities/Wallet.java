@@ -40,6 +40,8 @@ public class Wallet {
 	@JoinColumn(name = "wallet_type_id")
 	private WalletType walletType;
 	
+	public Wallet() {}
+	
 	public Wallet(@NotBlank String string, @NotBlank String string2, @NotBlank String string3, @NotBlank String string4, @NotNull WalletType.Enum enum1) {}
 
 	
